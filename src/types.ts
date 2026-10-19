@@ -1,5 +1,5 @@
 // 앱 전역 타입
-import type { Species, Photo, PartTag } from '../../data/schema';
+import type { Species, Photo, PartTag } from '../data/schema';
 
 export type { Species, Photo, PartTag };
 

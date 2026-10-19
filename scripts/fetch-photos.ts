@@ -206,6 +206,8 @@ async function commonsCandidates(sp: Species, need: number): Promise<CachedCandi
     for (const pid of Object.keys(pages)) {
       const ii = pages[pid].imageinfo?.[0];
       if (!ii) continue;
+      // 비이미지/부적합 포맷(PDF·SVG·도감스캔 등) 제외
+      if (!/\.(jpe?g|png|webp)$/i.test(ii.url)) continue;
       const licRaw = (ii.extmetadata?.LicenseShortName?.value ||
         ii.extmetadata?.License?.value ||
         '')
