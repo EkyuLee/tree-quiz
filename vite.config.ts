@@ -36,10 +36,10 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // 사진(webp)과 데이터(json)까지 오프라인 캐시
-        globPatterns: ['**/*.{js,css,html,svg,png,webp,json,woff2}'],
-        // 사진이 많으므로 개별 캐시 상한을 넉넉히
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        // 앱 셸·데이터·썸네일만 미리 캐시. 원본 사진(webp)은 런타임 캐시(CacheFirst)로.
+        globPatterns: ['**/*.{js,css,html,svg,png,json,woff2}', '**/*.thumb.webp'],
+        globIgnores: ['**/photos/**/[0-9][0-9].webp'],
+        maximumFileSizeToCacheInBytes: 2 * 1024 * 1024,
         runtimeCaching: [
           {
             urlPattern: ({ url }) => url.pathname.endsWith('.webp'),
