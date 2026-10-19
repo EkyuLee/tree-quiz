@@ -1,0 +1,424 @@
+{
+  "geumsingnamu": [
+    {
+      "file": "photos/geumsingnamu/01.webp",
+      "thumb": "photos/geumsingnamu/01.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/251148963",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/02.webp",
+      "thumb": "photos/geumsingnamu/02.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/197449505",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/03.webp",
+      "thumb": "photos/geumsingnamu/03.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/197449505",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/04.webp",
+      "thumb": "photos/geumsingnamu/04.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/186779562",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/05.webp",
+      "thumb": "photos/geumsingnamu/05.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/186779562",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/06.webp",
+      "thumb": "photos/geumsingnamu/06.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/186779562",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/07.webp",
+      "thumb": "photos/geumsingnamu/07.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/186779562",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/geumsingnamu/08.webp",
+      "thumb": "photos/geumsingnamu/08.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/42077132",
+      "author": "onidiras-iNaturalist",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    }
+  ],
+  "bansong": [
+    {
+      "file": "photos/bansong/01.webp",
+      "thumb": "photos/bansong/01.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/408831141",
+      "author": "강민재",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/02.webp",
+      "thumb": "photos/bansong/02.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/405710297",
+      "author": "hollyposner",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/03.webp",
+      "thumb": "photos/bansong/03.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/404634940",
+      "author": "김미소",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/04.webp",
+      "thumb": "photos/bansong/04.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/402912028",
+      "author": "Christopher Sharp",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/05.webp",
+      "thumb": "photos/bansong/05.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/400908941",
+      "author": "Annisa Sukma Ningrati",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/06.webp",
+      "thumb": "photos/bansong/06.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/400648713",
+      "author": "eunyul",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/07.webp",
+      "thumb": "photos/bansong/07.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/399553169",
+      "author": "campbellfmh",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/bansong/08.webp",
+      "thumb": "photos/bansong/08.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/399553169",
+      "author": "campbellfmh",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    }
+  ],
+  "baekdangnamu": [
+    {
+      "file": "photos/baekdangnamu/01.webp",
+      "thumb": "photos/baekdangnamu/01.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/400697407",
+      "author": "강윤희",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/02.webp",
+      "thumb": "photos/baekdangnamu/02.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/369174810",
+      "author": "진아임",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/03.webp",
+      "thumb": "photos/baekdangnamu/03.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/346809242",
+      "author": "Paul Ha",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/04.webp",
+      "thumb": "photos/baekdangnamu/04.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/346809237",
+      "author": "Paul Ha",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/05.webp",
+      "thumb": "photos/baekdangnamu/05.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/322944797",
+      "author": "José Ignacio Márquez Corro",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/06.webp",
+      "thumb": "photos/baekdangnamu/06.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/316661147",
+      "author": "Alexander Ganse",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/07.webp",
+      "thumb": "photos/baekdangnamu/07.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/314732336",
+      "author": "lesssbi_hodger",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/baekdangnamu/08.webp",
+      "thumb": "photos/baekdangnamu/08.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/296932542",
+      "author": "Alexander Ganse",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    }
+  ],
+  "sancheoljjuk": [
+    {
+      "file": "photos/sancheoljjuk/01.webp",
+      "thumb": "photos/sancheoljjuk/01.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/401483939",
+      "author": "yejun8773",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/02.webp",
+      "thumb": "photos/sancheoljjuk/02.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/397122141",
+      "author": "김민율",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/03.webp",
+      "thumb": "photos/sancheoljjuk/03.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/392317007",
+      "author": "임서아",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/04.webp",
+      "thumb": "photos/sancheoljjuk/04.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/392316821",
+      "author": "임서아",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/05.webp",
+      "thumb": "photos/sancheoljjuk/05.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/388102118",
+      "author": "sonokong",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/06.webp",
+      "thumb": "photos/sancheoljjuk/06.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/375689389",
+      "author": "송선민",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/07.webp",
+      "thumb": "photos/sancheoljjuk/07.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/365598074",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/sancheoljjuk/08.webp",
+      "thumb": "photos/sancheoljjuk/08.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/365598074",
+      "author": "Leslie Hurteau",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    }
+  ],
+  "susukkotdari": [
+    {
+      "file": "photos/susukkotdari/01.webp",
+      "thumb": "photos/susukkotdari/01.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/400698543",
+      "author": "강윤희",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/02.webp",
+      "thumb": "photos/susukkotdari/02.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/384858617",
+      "author": "변은영",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/03.webp",
+      "thumb": "photos/susukkotdari/03.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/60775221",
+      "author": "Kim, Hyun-tae",
+      "license": "CC-BY-NC-SA",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/04.webp",
+      "thumb": "photos/susukkotdari/04.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/377383367",
+      "author": "Mike Yan",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/05.webp",
+      "thumb": "photos/susukkotdari/05.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/286674282",
+      "author": "Urgamal Magsar",
+      "license": "CC-BY",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/06.webp",
+      "thumb": "photos/susukkotdari/06.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/284775134",
+      "author": "Amaël Borzée",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/07.webp",
+      "thumb": "photos/susukkotdari/07.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/284755372",
+      "author": "Urgamal Magsar",
+      "license": "CC-BY",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "provider": "iNaturalist"
+    },
+    {
+      "file": "photos/susukkotdari/08.webp",
+      "thumb": "photos/susukkotdari/08.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/283905754",
+      "author": "Urgamal Magsar",
+      "license": "CC-BY",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "provider": "iNaturalist"
+    }
+  ],
+  "hieori": [
+    {
+      "file": "photos/hieori/01.webp",
+      "thumb": "photos/hieori/01.thumb.webp",
+      "part": "whole",
+      "sourceUrl": "https://www.inaturalist.org/observations/17403647",
+      "author": "Hui KIM",
+      "license": "CC-BY-NC",
+      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "provider": "iNaturalist"
+    }
+  ]
+}

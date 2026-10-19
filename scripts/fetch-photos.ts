@@ -132,11 +132,20 @@ function partFromInat(): PartTag {
   return 'whole'; // annotation이 불명확하면 whole로 두고, 실제 태깅은 Commons 분류/파일명으로 보강
 }
 
-async function inatCandidates(sp: Species): Promise<CachedCandidate[]> {
-  const taxa = await getJson<InatTaxaResp>(
-    `https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(sp.scientificName)}&rank=species&per_page=1`,
+async function inatTaxonId(name: string): Promise<number | undefined> {
+  const r = await getJson<InatTaxaResp>(
+    `https://api.inaturalist.org/v1/taxa?q=${encodeURIComponent(name)}&per_page=1`,
   );
-  const taxonId = taxa.results[0]?.id;
+  return r.results[0]?.id;
+}
+
+async function inatCandidates(sp: Species): Promise<CachedCandidate[]> {
+  // 전체 학명 → 없으면 이명법(속+종)으로 폴백 (f./var. 등 품종명 미등록 대응)
+  let taxonId = await inatTaxonId(sp.scientificName);
+  if (!taxonId) {
+    const binomial = sp.scientificName.split(/\s+/).slice(0, 2).join(' ');
+    if (binomial !== sp.scientificName) taxonId = await inatTaxonId(binomial);
+  }
   if (!taxonId) return [];
 
   const cands: CachedCandidate[] = [];
