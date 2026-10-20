@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useStudyData } from './hooks/useStudyData';
+import { FlashcardView } from './views/FlashcardView';
 import { TodayView } from './views/TodayView';
 import { ExamView } from './views/ExamView';
 import { WeaknessView } from './views/WeaknessView';
@@ -7,10 +8,11 @@ import { BookView } from './views/BookView';
 import { Dashboard } from './views/Dashboard';
 import { SourcesView } from './views/SourcesView';
 
-type Tab = 'today' | 'exam' | 'weakness' | 'book' | 'dash';
+type Tab = 'flash' | 'today' | 'exam' | 'weakness' | 'book' | 'dash';
 type Route = Tab | 'sources';
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
+  { id: 'flash', label: '감별', icon: '🔍' },
   { id: 'today', label: '오늘', icon: '📘' },
   { id: 'exam', label: '모의고사', icon: '📝' },
   { id: 'weakness', label: '약점', icon: '🎯' },
@@ -20,7 +22,7 @@ const TABS: { id: Tab; label: string; icon: string }[] = [
 
 export default function App() {
   const store = useStudyData();
-  const [route, setRoute] = useState<Route>('today');
+  const [route, setRoute] = useState<Route>('flash');
 
   if (!store.data) {
     return (
@@ -47,6 +49,7 @@ export default function App() {
       </header>
 
       <main>
+        {route === 'flash' && <FlashcardView store={store} />}
         {route === 'today' && <TodayView store={store} />}
         {route === 'exam' && <ExamView store={store} />}
         {route === 'weakness' && <WeaknessView store={store} />}

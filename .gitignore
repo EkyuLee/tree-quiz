@@ -7,3 +7,4 @@ dev-dist
 coverage
 # 파이프라인 임시/캐시 (사진 원본 캐시는 커밋 안 함)
 scripts/.cache
+*.tsbuildinfo

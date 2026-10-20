@@ -439,3 +439,37 @@ small.note {
   background: #fdf3e0;
   color: #6b4a04;
 }
+
+/* 감별 연습 2x2 사진 그리드 */
+.flash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.flash-grid figure {
+  margin: 0;
+  position: relative;
+  background: var(--green-light);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.flash-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+.flash-grid figcaption {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  font-size: 0.7rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+/* 사진이 1장뿐이면 그리드를 꽉 채움 */
+.flash-grid:has(figure:only-child) {
+  grid-template-columns: 1fr;
+}

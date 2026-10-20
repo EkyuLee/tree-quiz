@@ -24,6 +24,41 @@ export function pickPhoto(
   return shuffle(pool, rng)[0];
 }
 
+/**
+ * 한 수종에서 서로 다른 사진 n장을 고른다(감별 연습 그리드용).
+ * 가능하면 부위(part)가 다양하도록 부위별로 하나씩 우선 채우고, 모자라면 나머지에서 보충.
+ * 사진이 n장 미만이면 있는 만큼만 반환한다.
+ */
+export function pickPhotos(sp: Species, n: number, rng: Rng = Math.random): Photo[] {
+  const photos = shuffle(usablePhotos(sp), rng);
+  if (photos.length <= n) return photos;
+
+  // 부위 다양성: part별로 1장씩 먼저 뽑고, 부족분은 남은 사진으로 채움
+  const byPart = new Map<string, Photo[]>();
+  for (const p of photos) {
+    const arr = byPart.get(p.part) ?? [];
+    arr.push(p);
+    byPart.set(p.part, arr);
+  }
+  const picked: Photo[] = [];
+  const used = new Set<Photo>();
+  // 1차: 각 부위에서 한 장씩
+  for (const arr of byPart.values()) {
+    if (picked.length >= n) break;
+    picked.push(arr[0]);
+    used.add(arr[0]);
+  }
+  // 2차: 남은 사진으로 채움
+  for (const p of photos) {
+    if (picked.length >= n) break;
+    if (!used.has(p)) {
+      picked.push(p);
+      used.add(p);
+    }
+  }
+  return picked.slice(0, n);
+}
+
 export interface BuildQuestionOpts {
   answerMode: AnswerMode;
   choiceCount?: number; // choice 모드일 때 보기 수
