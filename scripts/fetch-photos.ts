@@ -336,6 +336,9 @@ async function main() {
     if (DRY) continue;
 
     if (!existsSync(spDir)) mkdirSync(spDir, { recursive: true });
+    // 기존 photos[]의 part 태그 보존 (비전 분류 결과를 덮어쓰지 않음)
+    const prevPart = new Map<string, Photo['part']>();
+    for (const p of sp.photos) if (p.file) prevPart.set(p.file, p.part);
     const photos: Photo[] = [];
     let idx = 0;
     for (const c of cands) {
@@ -351,7 +354,7 @@ async function main() {
         photos.push({
           file: base + '.webp',
           thumb: base + '.thumb.webp',
-          part: c.part,
+          part: prevPart.get(base + '.webp') ?? c.part,
           sourceUrl: c.sourceUrl,
           author: c.author,
           license: c.license,

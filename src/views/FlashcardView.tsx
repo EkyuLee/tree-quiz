@@ -91,6 +91,7 @@ function FlashcardSession({
   const order = useMemo(() => shuffle(speciesIds), [speciesIds]);
   const [i, setI] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [zoom, setZoom] = useState<number | null>(null); // 라이트박스로 연 사진 index
 
   const sp = getSpecies(order[i]);
   const photos = useMemo(() => (sp ? pickPhotos(sp, 4) : []), [sp]);
@@ -105,10 +106,8 @@ function FlashcardSession({
 
   if (!sp) return null;
 
-  function reveal() {
-    if (!revealed) setRevealed(true);
-  }
   function next() {
+    setZoom(null);
     if (i + 1 >= order.length) {
       onExit();
     } else {
@@ -117,60 +116,50 @@ function FlashcardSession({
     }
   }
   function markAndNext(known: boolean) {
-    // 간단한 자가 채점: 간격 반복에 반영(맞음=correct, 모름=wrong)
     store.recordAnswer(sp!.id, known ? 'correct' : 'wrong');
     next();
   }
 
-  function onKey(e: React.KeyboardEvent) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      if (!revealed) reveal();
-      else next();
-    }
-  }
-
   return (
     <div>
-      <div className="row spread" style={{ marginBottom: 8 }}>
-        <h2 style={{ margin: 0, fontSize: '1.05rem' }}>감별 연습 · {groupLabel}</h2>
-        <button className="btn secondary" onClick={onExit}>
+      <div className="row spread" style={{ marginBottom: 6 }}>
+        <div className="row" style={{ gap: 8 }}>
+          <strong style={{ fontSize: '0.95rem' }}>감별 · {groupLabel}</strong>
+          <small className="note">
+            {i + 1}/{order.length}
+          </small>
+        </div>
+        <button
+          className="btn secondary"
+          style={{ padding: '6px 12px', minHeight: 'auto' }}
+          onClick={onExit}
+        >
           그만두기
         </button>
       </div>
 
-      <div className="row spread">
-        <small className="note">
-          {i + 1} / {order.length}
-        </small>
-        <div className="progress" style={{ width: 120 }}>
-          <span style={{ width: `${((i + 1) / order.length) * 100}%` }} />
-        </div>
+      <div className="progress" style={{ marginBottom: 8 }}>
+        <span style={{ width: `${((i + 1) / order.length) * 100}%` }} />
       </div>
 
-      {/* 클릭 시 정답 공개 영역 */}
-      <div
-        role="button"
-        tabIndex={0}
-        aria-label={revealed ? '정답 공개됨. 다음으로 넘어가려면 누르세요' : '사진을 보고 이름을 떠올린 뒤 눌러 정답 확인'}
-        onClick={reveal}
-        onKeyDown={onKey}
-        style={{ cursor: revealed ? 'default' : 'pointer', outlineOffset: 4 }}
-      >
-        <PhotoGrid photos={photos} speciesName={revealed ? sp.name : '???'} />
-        {!revealed && (
-          <p className="center muted" style={{ marginTop: 8 }}>
-            이 수종의 이름은? — 화면을 누르면 정답이 보입니다
-          </p>
-        )}
-      </div>
+      {/* 사진 그리드 — 개별 사진 탭 시 라이트박스로 확대 */}
+      <PhotoGrid
+        photos={photos}
+        speciesName={revealed ? sp.name : '???'}
+        onZoom={(idx) => setZoom(idx)}
+      />
+      {!revealed && (
+        <p className="center muted" style={{ margin: '8px 0 0', fontSize: '0.85rem' }}>
+          사진을 누르면 크게 볼 수 있어요. 이름을 떠올린 뒤 “정답 보기”.
+        </p>
+      )}
 
       {revealed && (
-        <div className="feedback correct" role="status" aria-live="polite" style={{ marginTop: 12 }}>
-          <h3 style={{ marginTop: 0 }}>
+        <div className="feedback correct" role="status" aria-live="polite" style={{ marginTop: 10 }}>
+          <h3 style={{ margin: '0 0 4px' }}>
             {sp.name} <span className="sci">{sp.scientificName}</span>
           </h3>
-          <p>
+          <p style={{ margin: '0 0 4px' }}>
             <span className="badge">{sp.family}</span>
             <span className="badge">{sp.leafPersistence}</span>
             <span className="badge">{sp.habit.join('·')}</span>
@@ -186,10 +175,10 @@ function FlashcardSession({
         </div>
       )}
 
-      <div className="row" style={{ marginTop: 16 }}>
+      <div className="row" style={{ marginTop: 12 }}>
         {!revealed ? (
-          <button className="btn" style={{ width: '100%' }} onClick={reveal}>
-            정답 보기 (Enter)
+          <button className="btn" style={{ width: '100%' }} onClick={() => setRevealed(true)}>
+            정답 보기
           </button>
         ) : (
           <>
@@ -202,16 +191,29 @@ function FlashcardSession({
           </>
         )}
       </div>
-      {revealed && (
-        <button className="btn ghost" style={{ width: '100%', marginTop: 8 }} onClick={next}>
-          채점 없이 다음
-        </button>
+
+      {zoom !== null && photos[zoom] && (
+        <Lightbox
+          photo={photos[zoom]}
+          speciesName={revealed ? sp.name : '???'}
+          onClose={() => setZoom(null)}
+          onPrev={zoom > 0 ? () => setZoom(zoom - 1) : undefined}
+          onNext={zoom < photos.length - 1 ? () => setZoom(zoom + 1) : undefined}
+        />
       )}
     </div>
   );
 }
 
-function PhotoGrid({ photos, speciesName }: { photos: Species['photos']; speciesName: string }) {
+function PhotoGrid({
+  photos,
+  speciesName,
+  onZoom,
+}: {
+  photos: Species['photos'];
+  speciesName: string;
+  onZoom: (idx: number) => void;
+}) {
   if (photos.length === 0) {
     return (
       <div className="photo-wrap" role="img" aria-label={`${speciesName} 사진 없음`}>
@@ -222,15 +224,89 @@ function PhotoGrid({ photos, speciesName }: { photos: Species['photos']; species
   return (
     <div className="flash-grid" aria-label={`${speciesName} 사진 ${photos.length}장`}>
       {photos.map((p, idx) => (
-        <figure key={idx} className="flash-cell">
+        <button
+          key={idx}
+          className="flash-cell"
+          onClick={() => onZoom(idx)}
+          aria-label={`${partLabel(p.part)} 사진 크게 보기`}
+        >
           <img
             src={assetUrl(p.file)}
             alt={`${speciesName}의 ${partLabel(p.part)} 사진`}
             loading="lazy"
           />
-          <figcaption>{partLabel(p.part)}</figcaption>
-        </figure>
+          <span className="flash-caption">{partLabel(p.part)}</span>
+        </button>
       ))}
+    </div>
+  );
+}
+
+function Lightbox({
+  photo,
+  speciesName,
+  onClose,
+  onPrev,
+  onNext,
+}: {
+  photo: NonNullable<Species['photos'][number]>;
+  speciesName: string;
+  onClose: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
+}) {
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowLeft' && onPrev) onPrev();
+      else if (e.key === 'ArrowRight' && onNext) onNext();
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose, onPrev, onNext]);
+
+  return (
+    <div
+      className="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${speciesName} ${partLabel(photo.part)} 사진 확대`}
+      onClick={onClose}
+    >
+      <button className="lightbox-close" onClick={onClose} aria-label="닫기">
+        ✕
+      </button>
+      <figure className="lightbox-fig" onClick={(e) => e.stopPropagation()}>
+        <img src={assetUrl(photo.file)} alt={`${speciesName}의 ${partLabel(photo.part)} 사진`} />
+        <figcaption>
+          <span className="badge">{partLabel(photo.part)}</span> {photo.author} · {photo.license}
+        </figcaption>
+      </figure>
+      {onPrev && (
+        <button
+          className="lightbox-nav prev"
+          onClick={(e) => {
+            e.stopPropagation();
+            onPrev();
+          }}
+          aria-label="이전 사진"
+        >
+          ‹
+        </button>
+      )}
+      {onNext && (
+        <button
+          className="lightbox-nav next"
+          onClick={(e) => {
+            e.stopPropagation();
+            onNext();
+          }}
+          aria-label="다음 사진"
+        >
+          ›
+        </button>
+      )}
+      <p className="lightbox-hint">빈 곳을 누르거나 Esc로 닫기</p>
     </div>
   );
 }
